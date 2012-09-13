@@ -12,7 +12,7 @@ sprockets-dotjs requires Rails 3.0 or above.
 
 Simply include the gem in your Gemfile and then run bundle install
 
-    gem 'sprockets-dotjs', :git => ''
+    gem 'sprockets-dotjs', :git => 'git://github.com/jamifsud/sprockets-dotjs.git'
 
 Then create your doT.js template file in your assets/javascripts directory.  Your templates must end with
 the extension .jst.djs in order to be processed as doT.js templates.  The templates will then be available
