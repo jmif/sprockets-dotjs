@@ -23,7 +23,7 @@ app/assets/javascripts/templates/home.jst.djs:
 
     <h1>This is my homepage.  Hello {{= name }}</h1>
 
-can be accessed with JST['templates/home']({ name: 'Joe' })
+can be accessed with `JST['templates/home']({ name: 'Joe' })`
 
 # Compatibility with other Templates #
 
