@@ -22,7 +22,7 @@ module Sprockets
 
       def render(scope=Object.new, locals={}, &block)
         val = @@context['doT']['compile'].call(data,@@context['def'])
-        val
+        val.to_s
       end
     end
   end
