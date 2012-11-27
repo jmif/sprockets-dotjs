@@ -12,12 +12,17 @@ module Sprockets
       def prepare
       end
 
-      def render(scope=Object.new, locals={}, &block)
-        dotjs_lib = open(::File.join(::File.dirname(__FILE__), '..', '..', 'support', 'doT.js')).read
 
-        context = ::V8::Context.new
-        context.eval(dotjs_lib)
-        context['doT']['compile'].call(data).to_s
+      def initialize_engine
+        dotjs_lib = open(::File.join(::File.dirname(__FILE__), '..', '..', 'support', 'doT.js')).read
+        @@context = ::V8::Context.new
+        @@context.eval(dotjs_lib)
+        @@context['def'] = {}
+      end
+
+      def render(scope=Object.new, locals={}, &block)
+        val = @@context['doT']['compile'].call(data,@@context['def'])
+        val.to_s
       end
     end
   end
